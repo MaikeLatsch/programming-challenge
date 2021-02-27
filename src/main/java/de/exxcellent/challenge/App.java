@@ -17,11 +17,12 @@ public final class App {
     public static void main(String... args) {
 
         WeatherAnalysis weatherAnalysis = new WeatherAnalysis();
+        FootballAnalysis footballAnalysis = new FootballAnalysis();
 
         String dayWithSmallestTempSpread = weatherAnalysis.getDayWithSmallestTemperatureSpread("src/main/resources/de/exxcellent/challenge/weather.csv");
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
 
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+        String teamWithSmallestGoalSpread = footballAnalysis.getTeamWithSmallestGoalSpread("src/main/resources/de/exxcellent/challenge/football.csv"); 
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
     }
 }

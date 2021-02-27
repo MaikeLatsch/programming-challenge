@@ -1,6 +1,9 @@
 package de.exxcellent.challenge.reader;
 
 /**
+ * This is a unit of the required weather data of one day.
+ * It contains the day of the month as name attribute and the maximum and minimum temperature of the day. 
+ * 
  * @author Maike Latsch
  *
  */
@@ -38,5 +41,16 @@ public class WeatherDay implements DataUnit {
 		// return the minimum temperature of the day
 		return minTemp;
 	}
+	
+	@Override
+	public boolean isEqual(DataUnit other) {
+		// return true if all attributes are equal
+		return (
+				other.getDataName().equals(this.day) &&
+				other.getFirstAttribute() == this.maxTemp &&
+				other.getSecondAttribute() == this.minTemp
+				);
+	}
+
 
 }

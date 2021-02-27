@@ -1,7 +1,7 @@
 package de.exxcellent.challenge.reader;
 
 /**
- * DataUnit represents one line from the csv-file. It is a unit of data needed for subsequent calculation.
+ * DataUnit represents one line from the csv-file. It is a unit of data needed for subsequent calculation. It has two integer parameters and a name.
  * 
  * @author Maike Latsch
  */
@@ -24,4 +24,11 @@ public interface DataUnit {
 	 * @return int
 	 */
 	public int getSecondAttribute();
+	
+	/**
+	 * check if the given data unit contains the same attributes
+	 * @param other data unit
+	 * @return boolean
+	 */
+	public boolean isEqual(DataUnit other);
 }

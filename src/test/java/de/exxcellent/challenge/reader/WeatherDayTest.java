@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
+ * Test cases for WeatherDay
+ * 
  * @author Maike Latsch
  *
  */
@@ -50,4 +52,20 @@ class WeatherDayTest {
 		assertEquals(60, weatherDay.getSecondAttribute());
 	}
 
+	/**
+	 * Test method for {@link de.exxcellent.challenge.reader.WeatherDay#isEqual(de.exxcellent.challenge.reader.WeatherDay)}.
+	 */
+	@Test
+	void testIsEqual() {
+		WeatherDay same = new WeatherDay("1", 90, 60);
+		WeatherDay otherName = new WeatherDay("2", 90, 60);
+		WeatherDay otherMaxTemp = new WeatherDay( "1", 100, 60);
+		WeatherDay otherMinTemp = new WeatherDay("1", 90, 30);
+		
+		assertTrue(weatherDay.isEqual(same));
+		assertFalse(weatherDay.isEqual(otherName));
+		assertFalse(weatherDay.isEqual(otherMaxTemp));
+		assertFalse(weatherDay.isEqual(otherMinTemp));
+
+	}
 }

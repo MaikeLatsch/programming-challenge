@@ -34,7 +34,7 @@ public class DataUnitAnalysis {
 	protected DataUnit getDataUnitWithMinDiff(ArrayList<DataUnit> dataUnitList) {
 		
 		// check empty list before get first element
-		if (dataUnitList == null) {
+		if (dataUnitList == null || dataUnitList.isEmpty()) {
 			return null;
 		}
 		// get first element and difference of attributes

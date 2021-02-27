@@ -13,7 +13,8 @@ import java.io.FileNotFoundException;
 public class WeatherAnalysis extends DataUnitAnalysis {
 	
 	/**
-	 * Returns the day number with the minimum temperature difference from the given file
+	 * Returns the day number with the minimum temperature difference from the given file.
+	 * If there are two days with the same minimal temperature difference, it returns the first day.
 	 * 
 	 * @param filename with weather data
 	 * @return String The day number with the minimum temperature difference

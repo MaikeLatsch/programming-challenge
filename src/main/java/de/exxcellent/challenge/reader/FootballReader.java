@@ -49,7 +49,7 @@ public class FootballReader extends CsvReader {
 		while (lineAttributes != null) {
 			
 			// continue if empty line
-			if (lineAttributes.length >= MAX_COLUMN) {
+			if (lineAttributes.length >= MAX_COLUMN+1) {
 				
 				// helper to create weatherDay
 				name = lineAttributes[NAME_COLUMN];

@@ -11,6 +11,11 @@ import java.io.FileNotFoundException;
  */
 public class WeatherReader extends CsvReader {
 	
+	private final static int DAY_COLUMN = 0;
+	private final static int MAXTEMP_COLUMN = 1;
+	private final static int MINTEMP_COLUMN = 2;
+	private final static int MAX_COLUMN = Math.max( DAY_COLUMN, Math.max(MINTEMP_COLUMN, MAXTEMP_COLUMN));
+	
 	/**
 	 * Constructor of WeatherReader
 	 * @param filename
@@ -44,12 +49,12 @@ public class WeatherReader extends CsvReader {
 		while (lineAttributes != null) {
 			
 			// continue if empty line
-			if (lineAttributes.length >= 3) {
+			if (lineAttributes.length >= MAX_COLUMN+1) {
 				
 				// helper to create weatherDay
-				day = lineAttributes[0];
-				maxTemp = Integer.parseInt(lineAttributes[1]);
-				minTemp = Integer.parseInt(lineAttributes[2]);
+				day = lineAttributes[DAY_COLUMN];
+				maxTemp = Integer.parseInt(lineAttributes[MAXTEMP_COLUMN]);
+				minTemp = Integer.parseInt(lineAttributes[MINTEMP_COLUMN]);
 				
 				// create weatherDay
 				weatherDay = new WeatherDay(day, maxTemp, minTemp);

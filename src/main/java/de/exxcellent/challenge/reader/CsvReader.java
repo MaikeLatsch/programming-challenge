@@ -28,7 +28,7 @@ public abstract class CsvReader {
 		// try to open the scanner with the file
 		try {
 			scanner = new Scanner(file);
-			scanner.useDelimiter(System.lineSeparator());
+			
 		}
 		catch(FileNotFoundException e) {
 			// error message, if no file found
@@ -48,8 +48,8 @@ public abstract class CsvReader {
 		
 		// try to read next line, else return null
 		try {
-			if (scanner.hasNext()) {
-				line = scanner.next();
+			if (scanner.hasNextLine()) {
+				line = scanner.nextLine();
 			}
 			else {
 				scanner.close();

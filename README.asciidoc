@@ -1,3 +1,11 @@
+= Solution by Maike Latsch
+
+To open the repository in eclipse go to File->Import and select "Projekt from Git (with smart import)" - > "Clone URI".
+Then copy https://github.com/MaikeLatsch/programming-challenge in the URI field and finish the import.
+
+The entry class is the de.exxcellent.challange.App 
+
+
 = eXXcellent programming challenge
 
 This repository provides the project scaffold for a simple

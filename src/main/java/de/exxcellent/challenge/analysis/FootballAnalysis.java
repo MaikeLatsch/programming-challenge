@@ -35,7 +35,11 @@ public class FootballAnalysis extends DataUnitAnalysis {
 		DataUnit resultDataUnit = getDataUnitWithMinDiff(footballReader.getData());
 		
 		// return the name of the football team with the minimum goal difference
-		return resultDataUnit.getDataName();
+		if (resultDataUnit != null) {
+			return resultDataUnit.getDataName();
+		}else {
+			return "";
+		}
 		
 		
 	}

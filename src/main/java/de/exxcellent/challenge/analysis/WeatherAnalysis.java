@@ -35,7 +35,11 @@ public class WeatherAnalysis extends DataUnitAnalysis {
 		DataUnit resultDataUnit = getDataUnitWithMinDiff(weatherReader.getData());
 		
 		// return the day number with the minimum temperature difference
-		return resultDataUnit.getDataName();
+		if (resultDataUnit != null) {
+			return resultDataUnit.getDataName();
+		}else {
+			return "";
+		}
 		
 		
 	}
